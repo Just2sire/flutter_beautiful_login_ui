@@ -17,6 +17,7 @@ class SocialButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return TextButton.icon(
       onPressed: () {},
       icon: SvgPicture.asset(
@@ -32,18 +33,19 @@ class SocialButton extends StatelessWidget {
         ),
       ),
       style: TextButton.styleFrom(
-          // fixedSize: Size(width, height),
-          padding: EdgeInsets.symmetric(
-            horizontal: horizontalPadding,
-            vertical: 30,
+        fixedSize: Size(size.width >= 769 ? 395 : size.width * 0.98, 80),
+        padding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding,
+          vertical: 30,
+        ),
+        shape: RoundedRectangleBorder(
+          side: const BorderSide(
+            color: Pallete.borderColor,
+            width: 3,
           ),
-          shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              color: Pallete.borderColor,
-              width: 3,
-            ),
-            borderRadius: BorderRadius.circular(10),
-          )),
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
     );
   }
 }

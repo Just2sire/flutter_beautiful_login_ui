@@ -8,6 +8,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -26,16 +27,16 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              const SocialButton(
+              SocialButton(
                 iconPath: "assets/svgs/g_logo.svg",
-                label: "Continue with Google",
+                label: size.width >= 769 ? "Continue with Google" : "Google",
               ),
               const SizedBox(
                 height: 20,
               ),
-              const SocialButton(
+              SocialButton(
                 iconPath: "assets/svgs/f_logo.svg",
-                label: "Continue with Facebook",
+                label: size.width >= 769 ? "Continue with Facebook" : "Facebook",
                 horizontalPadding: 90,
               ),
               const SizedBox(

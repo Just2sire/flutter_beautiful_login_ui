@@ -6,24 +6,21 @@ class GradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return Container(
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [
-            Pallete.gradient1,
-            Pallete.gradient2,
-            Pallete.gradient3,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight
-        ),
+        gradient: const LinearGradient(colors: [
+          Pallete.gradient1,
+          Pallete.gradient2,
+          Pallete.gradient3,
+        ], begin: Alignment.bottomLeft, end: Alignment.topRight,),
         borderRadius: BorderRadius.circular(7),
       ),
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          fixedSize: const Size(
-            395,
+          fixedSize: Size(
+            size.width >= 178 ? 395 : size.width * 0.97,
             55,
           ),
           backgroundColor: Colors.transparent,

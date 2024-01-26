@@ -7,23 +7,27 @@ class LoginField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        hintText: hintText,
-        contentPadding: const EdgeInsets.all(27),
-        enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Pallete.borderColor,
-            width: 3,
+    final size = MediaQuery.sizeOf(context);
+    return SizedBox(
+      width: size.width >= 769 ? 395 : size.width * 0.98,
+      child: TextFormField(
+        decoration: InputDecoration(
+          hintText: hintText,
+          contentPadding: const EdgeInsets.all(27),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Pallete.borderColor,
+              width: 3,
+            ),
+            borderRadius: BorderRadius.circular(10),
           ),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Pallete.gradient2,
-            width: 3,
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Pallete.gradient2,
+              width: 3,
+            ),
+            borderRadius: BorderRadius.circular(10),
           ),
-          borderRadius: BorderRadius.circular(10),
         ),
       ),
     );
